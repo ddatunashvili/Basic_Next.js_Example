@@ -35,6 +35,7 @@ To set up the project on your local machine, follow these steps:
 
 ## 4. Folder Structure
 
+```bash
 |-- pages
 |   |-- _app.js
 |   |--_document.js
@@ -58,3 +59,4 @@ To set up the project on your local machine, follow these steps:
 |   `-- index.js
 
 |-- data.json
+```
