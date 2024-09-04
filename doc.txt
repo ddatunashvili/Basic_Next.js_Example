@@ -1,0 +1,91 @@
+? source https://youtu.be/mTz0GXj8NN0 
+
+< next js tutorial
+
+npx create-next-app testing --use-npm
+
+
+* components 
+* com_name.module.css styles
+* dynamic pages with folders/index.js  file.js and [id].js
+* api folder -  has same dynamic urls and express like features/ same url as frontend has
+
+
+- Incremental Static Regeneration (ISR)
+- Advanced Data Fetching
+- API Routes Enhancements
+- Performance Optimization
+- Custom Document and Meta Tags
+
+-----------------------------------------------------------------------
+
+getServerSideProps VS getStaticProps VS getStaticPaths
+
+
+getServerSideProps:
+
+  When it runs: On every request to the page.
+  Purpose: Fetch data that needs to be fresh for each request.
+  Use case: Dynamic data that changes frequently, such as user-specific data or frequently updated content.
+
+> Showing the latest user data or real-time statistics.
+
+getStaticProps:
+
+  When it runs: At build time, once for each page.
+  Purpose: Generate static content that doesn’t change often.
+  Use case: Content that is relatively static or can be revalidated periodically, such as blog posts or documentation pages.
+
+> Generating static pages for a blog where posts don’t change frequently.
+
+getStaticPaths:
+
+  When it runs: At build time, used with getStaticProps.
+  Purpose: Define dynamic routes and specify which paths to pre-render.
+  Use case: When you have dynamic pages (e.g., a blog post with a dynamic id) and need to specify which paths should be statically generated at build time.
+
+> Pre-rendering pages for specific blog post IDs.
+
+-----------------------------------------------------------------------
+
+> fetching ways from backend in next
+
+export const getStaticProps = async (ctx) => {
+  const res = await fetch(`${server}/api/articles/${id}`);;
+  const art = await res.json();
+  return {
+    props: {
+      art,
+    },
+  };
+};
+
+
+export const getStaticPaths = async () => {
+  
+  const res = await fetch(`${server}/api/articles`);
+  const arts = await res.json();
+
+  
+  const paths = arts.map((art) => ({
+    params: { id: art.id.toString() },
+  }));
+
+  return {
+    paths,
+    fallback: false, 
+  };
+};
+
+
+
+export const getServerSideProps = async (ctx) => {
+    const res = await fetch(`${server}/api/articles/${id}`);
+
+    const art = await res.json()
+    return {
+        props: {
+            art
+        }
+    }
+}

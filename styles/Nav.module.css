@@ -1,0 +1,29 @@
+/* Nav.module.css */
+
+.nav {
+    background-color: #300053; /* Dark purple background color for consistency */
+    padding: 1rem; /* Padding around the navigation items */
+}
+
+.nav ul {
+    list-style-type: none; /* Remove bullet points from list items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Display list items in a row */
+    justify-content: center; /* Center the list items horizontally */
+}
+
+.nav li {
+    margin: 0 1rem; /* Margin between list items */
+}
+
+.nav a {
+    color: #cacaca; /* Light gray text color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Make the link text bold */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav a:hover {
+    color: #cdcdcd; /* Slightly lighter gray color on hover */
+}

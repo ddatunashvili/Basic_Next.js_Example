@@ -1,0 +1,39 @@
+/* About.module.css */
+
+.container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Matching font-family */
+    background-color: #300053; /* Matching background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #cacaca; /* Light gray color for title */
+}
+
+.content {
+    line-height: 1.6;
+    color: #cdcdcd; /* Light gray color for content to match body text */
+}
+
+.paragraph {
+    margin-bottom: 1.5rem;
+    color: #cdcdcd; /* Light gray color for paragraphs to match body text */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid #444; /* Darker gray for border-top for consistency */
+    color: #777; /* Darker gray for footer text */
+}
