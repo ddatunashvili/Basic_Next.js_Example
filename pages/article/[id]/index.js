@@ -10,7 +10,7 @@ const ArticlePage = ({ art }) => {
 
   return (
     <div className={styles.container}>
-      <Meta title={art.title} />
+      <Meta title={art.title} description={art.excerpt}/>
       <h1 className={styles.title}>{art.title}</h1>
       <p className={styles.body}>{art.body}</p>
       <Link href="/" className={styles.goBack}>Go Back</Link>
